@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, json
+import requests
 
 app = Flask(__name__)
 
@@ -6,13 +7,11 @@ app = Flask(__name__)
 def index_html():
     return render_template('index.html')
 
-@app.route('/members', methods=['GET', 'POST'])
+@app.route('/members')
 def members_html():
 
-    response = request.args.get('http://data.riksdagen.se/personlista/?iid=&fnamn=Elin&enamn=Feldborg+Nielsen&f_ar=1994&kn=&parti=&valkrets=&rdlstatus=&org=&utformat=html&termlista=parti')
-    ledarmoter = response.json()
-    print(ledarmoter)
-
+    response = requests.get("http://data.riksdagen.se/personlista/?iid=&fnamn=Matilda&enamn=Sundblom&f_ar=1992&kn=kvinna&parti=&valkrets=&rdlstatus=&org=&utformat=json&termlista=parti")
+    response.json()
     return render_template('members.html')
 
 @app.route('/contact')
