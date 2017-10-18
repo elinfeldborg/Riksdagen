@@ -32,7 +32,7 @@ end
 # unset irrelavent variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/Elin/GitHub/Webbtjänster/Riksdagen/Riksdagen-env"
+set -gx VIRTUAL_ENV "/Users/Elin/GitHub/Webbtjänster/Riksdagen/riksdagen-env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
@@ -55,8 +55,8 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     # with the original prompt function renamed, we can override with our own.
     function fish_prompt
         # Prompt override?
-        if test -n "$(Riksdagen-env) "
-            printf "%s%s%s" "$(Riksdagen-env) " (set_color normal) (_old_fish_prompt)
+        if test -n "$(riksdagen-env) "
+            printf "%s%s%s" "$(riksdagen-env) " (set_color normal) (_old_fish_prompt)
             return
         end
         # ...Otherwise, prepend env
