@@ -1,5 +1,6 @@
-from flask import Flask, render_template, json
+from flask import Flask, render_template
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -10,9 +11,11 @@ def index_html():
 @app.route('/members')
 def members_html():
 
-    response = requests.get("http://data.riksdagen.se/personlista/?iid=&fnamn=Matilda&enamn=Sundblom&f_ar=1992&kn=kvinna&parti=&valkrets=&rdlstatus=&org=&utformat=json&termlista=parti")
-    response.json()
-    return render_template('members.html')
+    response = requests.get("http://data.riksdagen.se/personlista/?iid=&fnamn=&enamn=&f_ar=&kn=&parti=M&valkrets=&rdlstatus=&org=&utformat=json&termlista=")
+    members = response.json()
+    print(members)
+
+    return render_template("members.html", members = members)
 
 @app.route('/contact')
 def contact_html():
