@@ -21,7 +21,7 @@
 			<ul>
 				<li><a href="/" accesskey="1" title="homepage">Startsida</a></li>
 				<li class="active"><a href="members" accesskey="2" title="members">Ledamöter och partier</a></li>
-				<li><a href="twitter" accesskey="4" title="twitter">Twitter</a></li>
+        <li><a href="twitter" accesskey="4" title="twitter">Twitter</a></li>
 				<li><a href="contact" accesskey="3" title="contact">Kontakta oss</a></li>
 			</ul>
 		</div>
@@ -34,16 +34,7 @@
 		  <h1>Information ledamöter - Moderaterna</h1>
 		</div>
 
-		<ul class="members">
-				{% for member in members %}
-					{%for personer in members.personlista.person %}
-						<img src="{{personer.bild_url_192}}" />
-						<h2> {{personer.tilltalsnamn }} {{personer.efternamn }} - Födelseår: {{personer.fodd_ar }}</h2>
-						<h3> Status: {{personer.status }}</h3>
-						<h3> Valkrets: {{personer.valkrets }}</h3>
-						{% endfor %}
-				{% endfor %}
-			</ul>
+
 
 	<div id="three-column" class="container">
 		<div><span class="arrow-down"></span></div>

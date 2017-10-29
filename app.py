@@ -20,6 +20,12 @@ def members_html():
 
     return render_template("members.html", members = members)
 
+
+@app.route('/twitter')
+def twitter_html():
+    return render_template("twitter.html")
+
+
 @app.route('/contact')
 def contact_html():
     return render_template('contact.html')
