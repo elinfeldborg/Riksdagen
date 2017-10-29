@@ -15,7 +15,7 @@ def index_html():
 @app.route('/members')
 def members_html():
 
-    response = requests.get("http://data.riksdagen.se/personlista/?iid=&fnamn=&enamn=&f_ar=&kn=&parti=KD&valkrets=&rdlstatus=&org=&utformat=json&termlista=")
+    response = requests.get("http://data.riksdagen.se/personlista/?iid=&fnamn=&enamn=&f_ar=&kn=&parti=M&valkrets=&rdlstatus=&org=&utformat=json&termlista=")
     members = response.json()
 
     return render_template("members.html", members = members)
