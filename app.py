@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import requests
+import json
 from jinja2 import Template
 from tweepy import Stream
 from tweepy import OAuthHandler
