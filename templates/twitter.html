@@ -34,7 +34,17 @@
 		  <h1>Information ledamöter - Moderaterna</h1>
 		</div>
 
+		<form>
+			Ledamotsnamn:<br>
+			<input type="text" name="input"<br>
+			<input type="submit" value="Sök Tweet">
+		</form>
 
+		<ul class="twitter">
+				{% for status in statuses %}
+					<p> {{status.text }} </p>
+				{% endfor %}
+			</ul>
 
 	<div id="three-column" class="container">
 		<div><span class="arrow-down"></span></div>

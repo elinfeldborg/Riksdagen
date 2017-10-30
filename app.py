@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 import requests
+from flask import request
 import json
 from jinja2 import Template
-from tweepy import Stream
-from tweepy import OAuthHandler
-from tweepy.streaming import StreamListener
+import twitter
+
 
 app = Flask(__name__)
 
@@ -21,10 +21,18 @@ def members_html():
     return render_template("members.html", members = members)
 
 
-@app.route('/twitter')
+@app.route('/twitter', methods=['GET', 'POST'])
 def twitter_html():
-    return render_template("twitter.html")
 
+    api = twitter.Api(consumer_key='wfLFiJsqho3SCe4x0VZLWRpa2',
+    consumer_secret='3yVVNXMhSL79sH23IUkPwOQztpdQ7lSWAWzQf2Ted9mnF935B9',
+    access_token_key='368883718-jGwQoh8dYpW2IPMsmCexlYbLq2hc0cCxThaekzKm',
+    access_token_secret='EuXP5ktiFkP0Rh1aEOuidLYmZk6RzoqSvoJeTbzqYdQe3')
+
+    statuses = api.GetUserTimeline(screen_name='HultbergJohan')
+    print([s.text for s in statuses])
+
+    return render_template("twitter.html", statuses = statuses)
 
 @app.route('/contact')
 def contact_html():
