@@ -29,9 +29,8 @@ def twitter_html():
     access_token_key='368883718-jGwQoh8dYpW2IPMsmCexlYbLq2hc0cCxThaekzKm',
     access_token_secret='EuXP5ktiFkP0Rh1aEOuidLYmZk6RzoqSvoJeTbzqYdQe3')
 
-    statuses = api.GetUserTimeline(screen_name='TobiasBillstrom')
-
-    print([s.text for s in statuses])
+    statuses = api.GetUserTimeline(screen_name='tomastobe')
+    print([status.text for status in statuses])
 
     return render_template("twitter.html", statuses = statuses)
 
