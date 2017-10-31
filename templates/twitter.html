@@ -33,7 +33,7 @@
 		<div class="title">
 		  <h1>Kolla vad som skrivs om ledamöterna på Twitter</h1><br>
 
-			<form method='get' action='http://twitter.com/search'>
+			<form action="/twitter" method="POST">
 				<p>
 						<input type="text" name="search" placeholder="Sök efter ledamot.." required>
 						<input class="button" type="submit" value="Sök">
@@ -41,11 +41,11 @@
 			</form>
 		</div>
 
-		<ul class="twitter">
-			{% for status in statuses %}
-				<p><strong> {{status.text }} </strong></p>
-			{% endfor %}
-		</ul>
+	<div id="twitter">
+		{% for status in statuses %}
+			<p><strong> {{status.text }} </strong></p>
+		{% endfor %}
+	</div>
 
 		<div id="three-column" class="container">
 			<div><span class="arrow-down"></span></div>

@@ -30,7 +30,6 @@ def twitter_html():
     access_token_secret='EuXP5ktiFkP0Rh1aEOuidLYmZk6RzoqSvoJeTbzqYdQe3')
 
     statuses = api.GetUserTimeline(screen_name='tomastobe')
-    print([status.text for status in statuses])
 
     return render_template("twitter.html", statuses = statuses)
 
